@@ -1,0 +1,4 @@
+#!/bin/sh
+
+COMMAND=$(xprop -id $(xdotool getactivewindow) | grep CLASS  | awk '{print $4}' | tr -d \" | tr -d , | awk '{print tolower($0)}')
+$COMMAND
